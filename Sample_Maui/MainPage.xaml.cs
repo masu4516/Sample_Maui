@@ -20,6 +20,17 @@
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
+
+        void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker)sender;
+            int selectedIndex = picker.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                labelPick.Text = (string)picker.ItemsSource[selectedIndex];
+            }
+        }
     }
 
 }
