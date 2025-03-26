@@ -28,7 +28,7 @@
 
             if (selectedIndex != -1)
             {
-                labelPick.Text = (string)picker.ItemsSource[selectedIndex];
+                pickLabel.Text = (string)picker.ItemsSource[selectedIndex];
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Sample_Maui.Controls"
              x:Class="Sample_Maui.MainPage">
 
     <ScrollView>
@@ -45,7 +46,21 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <Label x:Name="labelPick" Text="{Binding Source={x:Reference picker}, Path=SelectedItem}" />
+            <Label x:Name="pickLabel" Text="{Binding Source={x:Reference picker}, Path=SelectedItem}" />
+
+            <local:MyPicker x:Name="weekPicker" Title="SelectWeek">
+                <local:MyPicker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Sunday</x:String>
+                        <x:String>Monday</x:String>
+                        <x:String>Tuesday</x:String>
+                        <x:String>Wednesday</x:String>
+                        <x:String>Thursday</x:String>
+                        <x:String>Friday</x:String>
+                        <x:String>Saturday</x:String>
+                    </x:Array>
+                </local:MyPicker.ItemsSource>
+            </local:MyPicker>
         </VerticalStackLayout>
     </ScrollView>
 

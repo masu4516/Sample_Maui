@@ -57,9 +57,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="Controls\MyView.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Controls\MyView.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Controls\MyView.xaml.cs">
+	    <DependentUpon>MyView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>
