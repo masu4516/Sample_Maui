@@ -32,7 +32,14 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
 
-            <Picker x:Name="picker" Title="SelectWeek">
+            <Button
+                x:Name="PopupBtn"
+                Text="Popup" 
+                SemanticProperties.Hint="PopupPicker"
+                Clicked="OnPopupClicked"
+                HorizontalOptions="Fill" />
+
+            <Picker x:Name="picker" Title="SelectMonkey" SelectedIndexChanged="OnPickerSelectedIndexChanged">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Baboon</x:String>

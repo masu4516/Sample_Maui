@@ -3,18 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Sample_Maui.Controls"
              x:Class="Sample_Maui.Controls.MyPicker">
+    
     <StackLayout>
         <Label Text="Hello Xamarin.Forms!" />
-        <local:MyPicker x:Name="picker" Title="Select a monkey">
+        <local:MyPicker x:Name="picker" Title="SelectNumber">
             <local:MyPicker.ItemsSource>
-                <x:Array Type="{x:String}">
-                    <x:String>Baboon</x:String>
-                    <x:String>Capuchin Monkey</x:String>
-                    <x:String>Blue Monkey</x:String>
-                    <x:String>Squirrel Monkey</x:String>
-                    <x:String>Golden Lion Tamarin</x:String>
-                    <x:String>Howler Monkey</x:String>
-                    <x:String>Japanese Macaque</x:String>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>100</x:String>
+                    <x:String>200</x:String>
+                    <x:String>300</x:String>
+                    <x:String>400</x:String>
+                    <x:String>500</x:String>
+                    <x:String>600</x:String>
+                    <x:String>700</x:String>
                 </x:Array>
             </local:MyPicker.ItemsSource>
         </local:MyPicker>
