@@ -1,4 +1,6 @@
-﻿namespace Sample_Maui
+﻿using Sample_Maui.Controls;
+
+namespace Sample_Maui
 {
     public partial class MainPage : ContentPage
     {
@@ -7,6 +9,7 @@
         public MainPage()
         {
             InitializeComponent();
+            ModifyEntry();
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
@@ -21,6 +24,7 @@
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
 
+        //イベントが発生したときにイベント ハンドラーを実行
         void OnPickerSelectedIndexChanged(object sender, EventArgs e)
         {
             var picker = (Picker)sender;
@@ -30,6 +34,20 @@
             {
                 pickLabel.Text = (string)picker.ItemsSource[selectedIndex];
             }
+        }
+
+        //ピッカー作成後に呼び出し
+        void ModifyEntry()
+        {
+            Microsoft.Maui.Handlers.PickerHandler.Mapper.AppendToMapping("MyCustomization", (handler, view) =>
+            {
+                if (view is MyPicker)
+                {
+#if ANDROID
+                    handler.PlatformView.SetSelectAllOnFocus(true);
+#endif
+                }
+            });
         }
     }
 
