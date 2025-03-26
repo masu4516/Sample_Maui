@@ -35,7 +35,7 @@
             <Button
                 x:Name="PopupBtn"
                 Text="Popup" 
-                SemanticProperties.Hint="PopupPicker"
+                SemanticProperties.Hint="PopupPickerButton"
                 Clicked="OnPopupClicked"
                 HorizontalOptions="Fill" />
 

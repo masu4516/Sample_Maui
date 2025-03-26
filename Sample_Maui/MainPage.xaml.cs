@@ -1,11 +1,12 @@
-﻿using Sample_Maui.Controls;
+﻿using RGPopup.Maui.Extensions;
+using Sample_Maui.Controls;
 
 namespace Sample_Maui
 {
     public partial class MainPage : ContentPage
     {
         int count = 0;
-        private MyPicker popup_page;
+        //private PopupPicker popup_page;
 
         public MainPage()
         {
@@ -28,7 +29,7 @@ namespace Sample_Maui
         async void OnPopupClicked(object sender, EventArgs e)
         {
             
-            popup_page = new MyPicker();
+           // popup_page = new PopupPicker();
             //await Navigation.PushPopupAsync(popup_page);
         }
 

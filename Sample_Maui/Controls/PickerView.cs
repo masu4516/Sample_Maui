@@ -7,7 +7,7 @@ using Microsoft.Maui;
 
 namespace Sample_Maui.Controls
 {
-    public class CustomPicker : Picker
+    public class PickerView : Picker
     {
     }
 }
