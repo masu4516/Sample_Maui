@@ -73,9 +73,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Controls\PopupPick.xaml.cs">
+	    <DependentUpon>PopupPick.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Controls\MyPicker.xaml.cs">
 	    <DependentUpon>MyPicker.xaml</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Controls\PopupPick.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

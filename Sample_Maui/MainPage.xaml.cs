@@ -6,7 +6,7 @@ namespace Sample_Maui
     public partial class MainPage : ContentPage
     {
         int count = 0;
-        //private PopupPicker popup_page;
+        private PopupPicker popup_page;
 
         public MainPage()
         {
@@ -26,11 +26,12 @@ namespace Sample_Maui
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
 
+        //ボタン2を押した時の処理
         async void OnPopupClicked(object sender, EventArgs e)
         {
             
-           // popup_page = new PopupPicker();
-            //await Navigation.PushPopupAsync(popup_page);
+           popup_page = new PopupPicker();
+            Navigation.PushAsync(popup_page, true);
         }
 
         //ピッカーから選択時に実行
