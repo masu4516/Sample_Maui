@@ -3,7 +3,7 @@ using Microsoft.Maui.Handlers;
 using Android.Widget;
 using Android.App;
 
-namespace Sample_Maui.Platforms.Handlers
+namespace Sample_Maui.Platforms.Android.Handlers
 {
     public partial class MyPickerHandler
     {

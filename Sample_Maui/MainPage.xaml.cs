@@ -1,4 +1,5 @@
-﻿using RGPopup.Maui.Extensions;
+﻿using Microsoft.Maui.Graphics.Text;
+using RGPopup.Maui.Extensions;
 using Sample_Maui.Controls;
 
 namespace Sample_Maui
@@ -29,9 +30,25 @@ namespace Sample_Maui
         //ボタン2を押した時の処理
         async void OnPopupClicked(object sender, EventArgs e)
         {
-            
-           popup_page = new PopupPicker();
-            Navigation.PushAsync(popup_page, true);
+            label2.TextColor = Colors.Green;
+            /*popup_page = new PopupPicker();
+             Navigation.PushAsync(popup_page, true);*/
+            //Microsoft.Maui.Handlers.LabelHandler.Mapper.ModifyMapping(nameof(ILabel.TextColor), (handler, view, element) =>
+            //Microsoft.Maui.Handlers.LabelHandler.Mapper.PrependToMapping(nameof(ILabel.TextColor), (handler, view) =>
+            //Microsoft.Maui.Handlers.LabelHandler.Mapper.AppendToMapping(nameof(ILabel.TextColor), (handler, view) =>
+            Microsoft.Maui.Handlers.LabelHandler.Mapper.PrependToMapping("MyCustomization", (handler, view) =>
+            {
+                if (view is Label)
+                {
+#if ANDROID
+                    handler.PlatformView.SetSelectAllOnFocus(true);
+                    label2.TextColor = Colors.Red;
+#elif IOS
+                    handler.PlatformView.TextColor = UIColor.Red;
+#endif
+                }
+            });
+
         }
 
         //ピッカーから選択時に実行
