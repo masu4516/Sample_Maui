@@ -73,6 +73,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Controls\CrossPicker.xaml.cs">
+	    <DependentUpon>CrossPicker.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Controls\PopupPick.xaml.cs">
 	    <DependentUpon>PopupPick.xaml</DependentUpon>
 	  </Compile>
@@ -82,6 +85,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\CrossPicker.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Controls\PopupPick.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

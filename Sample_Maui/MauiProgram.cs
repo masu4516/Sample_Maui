@@ -1,4 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Handlers;
+using Sample_Maui.Controls;
+using Sample_Maui.Platforms.Handlers;
+using static Android.Provider.MediaStore;
 
 namespace Sample_Maui
 {
@@ -13,6 +17,10 @@ namespace Sample_Maui
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                })
+                .ConfigureMauiHandlers(handlers =>
+                {
+                    handlers.AddHandler(typeof(MyPicker), typeof(MyPickerHandler));
                 });
 
 #if DEBUG
