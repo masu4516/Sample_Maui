@@ -7,7 +7,7 @@ namespace Sample_Maui.Platforms.Android.Handlers
 {
     public partial class MyPickerHandler
     {
-        public static PropertyMapper<PickerView, MyPickerHandler> PropertyMapper = new PropertyMapper<PickerView, MyPickerHandler>(ViewHandler.ViewMapper)
+        public static PropertyMapper<MyPicker, MyPickerHandler> PropertyMapper = new PropertyMapper<MyPicker, MyPickerHandler>(ViewHandler.ViewMapper)
         {
 
         };
