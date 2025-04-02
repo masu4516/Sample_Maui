@@ -21,7 +21,7 @@ namespace Sample_Maui
                 {
 #if ANDROID
                     handlers.AddHandler(typeof(MyPicker), typeof(Platforms.Android.Handlers.MyPickerHandler));
-                    handlers.AddHandler(typeof(CustomLabel), typeof(Platforms.Android.Handlers.CustomLabelHandler));
+                    handlers.AddHandler(typeof(Label), typeof(Platforms.Android.Handlers.CustomLabelHandler));
 #endif
                 });
 

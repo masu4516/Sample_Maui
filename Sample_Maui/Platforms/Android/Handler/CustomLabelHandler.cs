@@ -10,7 +10,8 @@ namespace Sample_Maui.Platforms.Android.Handlers
     public partial class CustomLabelHandler
     {
         //ここは継承しないとエラーになる
-        public static PropertyMapper<CustomLabel, CustomLabelHandler> PropertyMapper = new PropertyMapper<CustomLabel, CustomLabelHandler>(ViewHandler.ViewMapper)
+        public static PropertyMapper<Label, CustomLabelHandler> PropertyMapper = 
+            new PropertyMapper<Label, CustomLabelHandler>(ViewHandler.ViewMapper)
         {
 
         };
@@ -21,22 +22,39 @@ namespace Sample_Maui.Platforms.Android.Handlers
         }
     }
 
-    public partial class CustomLabelHandler : ViewHandler<CustomLabel, TextView>
+    /// <summary>
+    /// ViewHandler<TVirtualView, TNativeView>
+    /// TVirtualView：共通部のコントロール(VirtualView)
+    /// TNativeView:プラットフォーム固有のコントロール(PlatformView)
+    /// </summary>
+    public partial class CustomLabelHandler : ViewHandler<Label, TextView>
     {
         //引数違いのコンストラクタ
         public CustomLabelHandler(IPropertyMapper mapper, CommandMapper? commandMapper = null) : base(mapper, commandMapper)
         {
         }
 
-        //継承にあたり必須のオーバーライド
+        /// <summary>
+        /// 継承にあたり必須のオーバーライド。ここでAndroidのコントロール（実画面）を生成する
+        /// </summary>
+        /// <returns></returns>
         protected override TextView CreatePlatformView()
         {
+            //共通部のコントロールを取得
+            var virtualView = this.VirtualView;
+            //AndroidのTextViewを生成
             var textView = new TextView(MainActivity.Instance);
-            // Xamarinのコントロールで設定したFontSizeを取得
-            var size = textView.TextSize;
-            textView.Text = "Comon";
 
+            if (virtualView.Text!=null)
+            {
+                textView.Text = virtualView.Text;
+            }
+
+            // Xamarinのコントロールで設定したFontSizeを取得
+            var size = virtualView.FontSize;
+            // 単位dpで設定し直す
             textView.SetTextSize(ComplexUnitType.Dip, (float)size);
+
             return textView;
         }
     }

@@ -9,8 +9,8 @@ using Java.Net;
 
 namespace Sample_Maui.Controls
 {
-    public class CustomLabel : View
-    {
+    public class CustomLabel : Label
+    {/*
         /// <summary>
         /// Textプロパティを作成
         /// </summary>
@@ -58,8 +58,8 @@ namespace Sample_Maui.Controls
             get { return (double)GetValue(FontSizeProperty); }
             set { SetValue(FontSizeProperty, value); }
         }
+        */
 
-        
 
 
     }

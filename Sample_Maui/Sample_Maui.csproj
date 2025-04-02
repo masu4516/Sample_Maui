@@ -69,15 +69,13 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.20" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="ReactiveProperty" Version="9.7.0" />
 		<PackageReference Include="RGPopup.Maui" Version="1.1.2" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Controls\CrossPicker.xaml.cs">
-	    <DependentUpon>CrossPicker.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Controls\PopupPick.xaml.cs">
-	    <DependentUpon>PopupPick.xaml</DependentUpon>
+	  <Compile Update="Views\ClockView.xaml.cs">
+	    <DependentUpon>ClockView.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Controls\MyPicker.xaml.cs">
 	    <DependentUpon>MyPicker.xaml</DependentUpon>
@@ -85,10 +83,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Controls\CrossPicker.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Controls\PopupPick.xaml">
+	  <MauiXaml Update="Views\ClockView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
