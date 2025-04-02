@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Handlers;
+using Sample_Maui.Handlers;
 using Sample_Maui.Controls;
 using static Android.Provider.MediaStore;
 
@@ -21,7 +22,8 @@ namespace Sample_Maui
                 {
 #if ANDROID
                     handlers.AddHandler(typeof(MyPicker), typeof(Platforms.Android.Handlers.MyPickerHandler));
-                    handlers.AddHandler(typeof(Label), typeof(Platforms.Android.Handlers.CustomLabelHandler));
+                    handlers.AddHandler(typeof(CustomLabel), typeof(Platforms.Android.Handlers.CustomLabelHandler));
+                    handlers.AddHandler(typeof(CustomEntry), typeof(CustomEntryHandler));
 #endif
                 });
 

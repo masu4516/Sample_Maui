@@ -74,6 +74,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Handler\CustomLabelHandler.cs">
+	    <ExcludeFromCurrentConfiguration>false</ExcludeFromCurrentConfiguration>
+	  </Compile>
 	  <Compile Update="Views\ClockView.xaml.cs">
 	    <DependentUpon>ClockView.xaml</DependentUpon>
 	  </Compile>

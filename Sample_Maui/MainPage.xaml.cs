@@ -39,9 +39,9 @@ namespace Sample_Maui
         //ボタン2を押した時の処理
         async void OnPopupClicked(object sender, EventArgs e)
         {
-            var size = label1.FontSize;
-            var color = label1.TextColor;
-            label2.TextColor = Colors.Green;
+            label1.TextColor = Colors.Orange;
+            label2.TextColor = Colors.Orange;
+            
             /*popup_page = new PopupPicker();
              Navigation.PushAsync(popup_page, true);*/
             //Microsoft.Maui.Handlers.LabelHandler.Mapper.ModifyMapping(nameof(ILabel.TextColor), (handler, view, element) =>
