@@ -23,7 +23,6 @@
             <local:CustomLabel
                 x:Name="label2"
                 TextColor="Green"
-                FontSize="50"
                 Text="Welcome to &#10;.NET Multi-platform App UI"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"

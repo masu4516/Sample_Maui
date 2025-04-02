@@ -8,7 +8,7 @@ using Microsoft.Maui.Platform;
 using Sample_Maui.Handlers;
 
 
-namespace Sample_Maui.Platforms.Android.Handlers
+namespace Sample_Maui.Handlers
 {
 
     /// <summary>

@@ -22,7 +22,7 @@ namespace Sample_Maui
                 {
 #if ANDROID
                     handlers.AddHandler(typeof(MyPicker), typeof(Platforms.Android.Handlers.MyPickerHandler));
-                    handlers.AddHandler(typeof(CustomLabel), typeof(Platforms.Android.Handlers.CustomLabelHandler));
+                    handlers.AddHandler(typeof(CustomLabel), typeof(CustomLabelHandler));
                     handlers.AddHandler(typeof(CustomEntry), typeof(CustomEntryHandler));
 #endif
                 });

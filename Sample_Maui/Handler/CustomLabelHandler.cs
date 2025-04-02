@@ -8,7 +8,7 @@ using Sample_Maui.Controls;
 using Microsoft.Maui.Handlers;
 
 
-namespace Sample_Maui.Platforms.Android.Handlers
+namespace Sample_Maui.Handlers
 {
     public partial class CustomLabelHandler
     {
