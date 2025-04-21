@@ -22,6 +22,11 @@ namespace Sample_Maui
         {
             InitializeComponent();
             ModifyEntry();
+            // ピッカーに値設定
+            CreateItem();
+
+            // 初期値設定
+            SelectInitIndex();
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
@@ -86,6 +91,43 @@ namespace Sample_Maui
 #endif
                 }
             });
+        }
+
+
+        /// <summary>
+        /// ピッカーに初期値を設定する
+        /// </summary>
+        private void SelectInitIndex()
+        {
+                    // -1 設定なしの場合、初期値0.0
+                    integerPick.SelectedIndex = 0;
+                    decimalPick.SelectedIndex = 0;
+                    return;
+        }
+
+
+        /// <summary>
+        /// ピッカーにアイテムを設定
+        /// </summary>
+        private void CreateItem()
+        {
+            // 整数 0~99の100個の配列を作成
+            int integer_len = 100;
+            string[] integer_item = new string[integer_len];
+            for (int i = 0; i < integer_len; i++)
+            {
+                integer_item[i] = i.ToString();
+            }
+            integerPick.ItemsSource = integer_item;
+
+            // 少数 0~9までの10個の配列を作成
+            int decimal_len = 10;
+            string[] decimal_item = new string[decimal_len];
+            for (int i = 0; i < decimal_len; i++)
+            {
+                decimal_item[i] = i.ToString();
+            }
+            decimalPick.ItemsSource = decimal_item;
         }
     }
 

@@ -47,6 +47,21 @@
                 Clicked="OnPopupClicked"
                 HorizontalOptions="Fill" />
 
+            <HorizontalStackLayout>
+                <local:PickerView x:Name="integerPick" FontSize="24">
+
+                </local:PickerView>
+
+                <Label Text="."
+                       FontSize="24"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"/>
+
+                <local:PickerView x:Name="decimalPick" FontSize="24">
+
+                </local:PickerView>
+            </HorizontalStackLayout>
+
             <Picker x:Name="picker" Title="SelectMonkey" SelectedIndexChanged="OnPickerSelectedIndexChanged">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -76,6 +91,7 @@
                     </x:Array>
                 </local:MyPicker.ItemsSource>
             </local:MyPicker>
+
         </VerticalStackLayout>
     </ScrollView>
 
