@@ -1,4 +1,7 @@
-﻿namespace Sample_Maui
+﻿
+using Sample_Maui.Http;
+
+namespace Sample_Maui
 {
     public partial class MainPage : ContentPage
     {
@@ -7,6 +10,7 @@
         public MainPage()
         {
             InitializeComponent();
+            //var check = new CheckHealthApi();
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
