@@ -1,4 +1,6 @@
-﻿namespace Sample_Maui
+﻿using Sample_Maui.ViewModels.Logic.Api;
+
+namespace Sample_Maui
 {
     public partial class MainPage : ContentPage
     {
@@ -11,7 +13,13 @@
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
+            // ヘルスチェック
+            var checkHealthApi = new CheckHealthApi();
+            if (checkHealthApi.Check())
+            {
+            }
+
+                count++;
 
             if (count == 1)
                 CounterBtn.Text = $"Clicked {count} time";
