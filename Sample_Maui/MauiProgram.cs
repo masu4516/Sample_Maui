@@ -15,7 +15,7 @@ namespace Sample_Maui
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                .RegisterFirebaseServices()
+                //.RegisterFirebaseServices()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -27,7 +27,7 @@ namespace Sample_Maui
 #endif
             return builder.Build();
         }
-
+        /*
         private static MauiAppBuilder RegisterFirebaseServices(this MauiAppBuilder builder)
         {
             builder.ConfigureLifecycleEvents(events => {
@@ -42,7 +42,7 @@ namespace Sample_Maui
             });
 
             return builder;
-        }
+        }*/
         
     }
 }

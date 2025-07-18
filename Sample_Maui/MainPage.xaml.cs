@@ -14,9 +14,9 @@ namespace Sample_Maui
 
         private async void OnCounterClicked(object sender, EventArgs e)
         {
-            await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
+            /*await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
             var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
-            Console.WriteLine($"FCM token: {token}");
+            Console.WriteLine($"FCM token: {token}");*/
         }
     }
 
