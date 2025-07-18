@@ -1,4 +1,5 @@
-﻿using Sample_Maui.ViewModels.Logic.Api;
+﻿using Plugin.Firebase.CloudMessaging;
+using Sample_Maui.ViewModels.Logic.Api;
 
 namespace Sample_Maui
 {
@@ -11,22 +12,11 @@ namespace Sample_Maui
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void OnCounterClicked(object sender, EventArgs e)
         {
-            // ヘルスチェック
-            var checkHealthApi = new CheckHealthApi();
-            if (checkHealthApi.Check())
-            {
-            }
-
-                count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
+            var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
+            Console.WriteLine($"FCM token: {token}");
         }
     }
 
